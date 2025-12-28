@@ -10,6 +10,9 @@ class Teacher(
 
     val thumbnail: String? = null,
 
+    @Column(name = "full_photo_path")
+    val fullPhotoPath: String? = null,
+
     @ManyToMany
     @JoinTable(
         name = "teacher_tag",
