@@ -9,9 +9,9 @@ class DepartmentMapper {
     
     fun toDto(department: Department): DepartmentDto {
         return DepartmentDto(
-            id = department.id,
+            id = department.id!!,
             name = department.name,
-            universityName = department.university.name
+            universityName = department.university?.name ?: ""
         )
     }
 }

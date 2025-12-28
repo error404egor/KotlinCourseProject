@@ -4,12 +4,12 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "universities")
-class University(
+data class University(
     @Column(nullable = false)
-    val name: String,
+    val name: String = "",
 
     @Column(nullable = false)
-    val city: String,
+    val city: String = "",
 
     val thumbnail: String? = null,
 

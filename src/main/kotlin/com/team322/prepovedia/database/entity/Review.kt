@@ -4,20 +4,20 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "reviews")
-class Review(
+data class Review(
     @Column(nullable = false, columnDefinition = "TEXT")
-    val text: String,
+    val text: String = "",
 
     @Column(nullable = false)
-    val rate: Int,
+    val rate: Int = 0,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
-    val author: User,
+    val author: User? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id", nullable = false)
-    val teacher: Teacher,
+    val teacher: Teacher? = null,
 
     @Column(name = "total_likes")
     val totalLikes: Int = 0,

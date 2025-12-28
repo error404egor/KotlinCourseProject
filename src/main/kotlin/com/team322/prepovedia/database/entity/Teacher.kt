@@ -4,9 +4,9 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "teachers")
-class Teacher(
+data class Teacher(
     @Column(name = "full_name", nullable = false)
-    val fullName: String,
+    val fullName: String = "",
 
     val thumbnail: String? = null,
 

@@ -4,18 +4,18 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "review_reactions")
-class Reaction(
+data class Reaction(
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val type: ReactionType,
+    val type: ReactionType? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "review_id", nullable = false)
-    val review: Review,
+    val review: Review? = null,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    val user: User
+    val user: User? = null
 ) : AbstractEntity()
 
 enum class ReactionType {

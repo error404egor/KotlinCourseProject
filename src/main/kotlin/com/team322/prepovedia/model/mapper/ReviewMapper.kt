@@ -9,11 +9,11 @@ class ReviewMapper {
     
     fun toDto(review: Review): ReviewDto {
         return ReviewDto(
-            id = review.id,
+            id = review.id!!,
             text = review.text,
             rate = review.rate,
-            authorName = review.author.name,
-            teacherName = review.teacher.fullName,
+            authorName = review.author?.name ?: "",
+            teacherName = review.teacher?.fullName ?: "",
             totalLikes = review.totalLikes,
             totalDislikes = review.totalDislikes,
             createdAt = review.createdAt

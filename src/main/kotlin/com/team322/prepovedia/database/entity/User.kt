@@ -4,12 +4,12 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "users")
-class User(
+data class User(
     @Column(nullable = false)
-    val name: String,
+    val name: String = "",
 
     @Column(nullable = false)
-    val university: String
+    val university: String = ""
 ) : AbstractEntity() {
 
     @OneToMany(mappedBy = "author", cascade = [CascadeType.ALL])

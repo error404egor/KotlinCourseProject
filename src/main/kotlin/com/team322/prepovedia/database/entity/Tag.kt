@@ -4,9 +4,9 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "tags")
-class Tag(
+data class Tag(
     @Column(nullable = false)
-    val name: String
+    val name: String = ""
 ) : AbstractEntity() {
 
     @ManyToMany(mappedBy = "tags")

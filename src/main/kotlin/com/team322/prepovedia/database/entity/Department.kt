@@ -4,13 +4,13 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "departments")
-class Department(
+data class Department(
     @Column(nullable = false)
-    val name: String,
+    val name: String = "",
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "university_id", nullable = false)
-    val university: University
+    val university: University? = null
 ) : AbstractEntity() {
 
     @ManyToMany(mappedBy = "departments")
