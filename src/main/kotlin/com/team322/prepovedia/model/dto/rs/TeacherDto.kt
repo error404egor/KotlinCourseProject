@@ -9,3 +9,4 @@ data class TeacherDto(
     val averageRating: Double?,
     val reviewCount: Int
 )
+
