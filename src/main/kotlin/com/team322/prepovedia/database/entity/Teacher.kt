@@ -10,9 +10,13 @@ class Teacher(
 
     val thumbnail: String? = null,
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tag_id")
-    val tag: Tag? = null
+    @ManyToMany
+    @JoinTable(
+        name = "teacher_tag",
+        joinColumns = [JoinColumn(name = "teacher_id")],
+        inverseJoinColumns = [JoinColumn(name = "tag_id")]
+    )
+    val tags: List<Tag> = mutableListOf()
 ) : AbstractEntity() {
 
     @OneToMany(mappedBy = "teacher", cascade = [CascadeType.ALL])

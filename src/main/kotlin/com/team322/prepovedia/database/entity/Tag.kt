@@ -9,6 +9,6 @@ class Tag(
     val name: String
 ) : AbstractEntity() {
 
-    @OneToMany(mappedBy = "tag")
+    @ManyToMany(mappedBy = "tags")
     val teachers: List<Teacher> = mutableListOf()
 }
