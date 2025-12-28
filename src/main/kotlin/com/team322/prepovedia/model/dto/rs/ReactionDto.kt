@@ -5,5 +5,5 @@ import com.team322.prepovedia.database.entity.ReactionType
 class ReactionDto(
     val id: Long,
     val type: ReactionType,
-    val userName: String
+    val user: UserDto
 )

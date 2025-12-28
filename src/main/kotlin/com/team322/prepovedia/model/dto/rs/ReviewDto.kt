@@ -6,8 +6,8 @@ class ReviewDto(
     val id: Long,
     val text: String,
     val rate: Int,
-    val authorName: String,
-    val teacherName: String,
+    val author: UserDto,
+    val teacher: TeacherDto,
     val totalLikes: Int,
     val totalDislikes: Int,
     val createdAt: LocalDateTime
